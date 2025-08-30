@@ -7,15 +7,14 @@ import path from 'node:path';
 const app = express();
 const port = process.env.PORT;
 
-app.use(express.static(path.join(import.meta.dirname, 'public')));
 app.use(express.json());
-
+app.use(express.static(path.join(import.meta.dirname, 'public')));
 app.use('/api', router);
 app.use('/api', errorHandler.notFound);
+app.use(errorHandler.internalServerError);
 app.use((req, res) => {
     res.status(200).sendFile(path.join(import.meta.dirname, 'public/index.html'));
 });
-app.use(errorHandler.internalServerError);
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);

@@ -1,11 +1,9 @@
 <script>
-  import Counter from './lib/Counter.svelte'
+  import Header from "./components/Header.svelte";
+  import Connect from "./components/Connect.svelte";
 </script>
 
 <main>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
+  <Header />
+  <Connect />
 </main>
