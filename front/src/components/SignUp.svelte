@@ -9,14 +9,14 @@
 
 <style>
     .login {
+        padding: 1rem;
         background: var(--light-color);
-        padding: 2.5rem 2rem 2rem 2rem;
         border-radius: 1.2rem;
         box-shadow:
             0 4px 24px rgba(42, 125, 225, 0.08),
             0 1.5px 6px rgba(0, 0, 0, 0.04);
         width: 300px;
-        margin: 3rem auto;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: 1.1rem;

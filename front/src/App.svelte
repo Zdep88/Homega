@@ -5,5 +5,4 @@
 
 <main>
   <Header />
-  <Connect />
 </main>
