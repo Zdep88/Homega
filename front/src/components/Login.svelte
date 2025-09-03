@@ -1,4 +1,13 @@
-<form method="post" class="login">
+<script>
+    import { login } from "../assets/dataMapper.js";
+</script>
+
+<form method="post" class="login" on:submit={(e) => {
+    e.preventDefault();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+    login(email, password);
+}}>
     <h2>Déjà inscrit ?</h2>
     <label for="login-email">Email</label>
     <input type="email" id="login-email" name="email" required />

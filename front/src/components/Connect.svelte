@@ -10,6 +10,7 @@
 
 <style>
     .connect {
+        margin-top: 3rem;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
