@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3000/api';
-
 async function login(email, password) {
     try {
         const response = await axios({
