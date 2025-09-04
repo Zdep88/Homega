@@ -1,4 +1,13 @@
-<form method="post" class="signUp">
+<script>
+    import { signUp } from "../assets/dataMapper.js";
+</script>
+
+<form method="post" class="signUp" on:submit={(e) => {
+    e.preventDefault();
+    const email = document.getElementById("signUp-email").value;
+    const password = document.getElementById("signUp-password").value;
+    signUp(email, password);
+}}>
     <h2>Nouveau compte</h2>
     <label for="signUp-email">Email</label>
     <input type="email" id="signUp-email" name="email" required />
@@ -16,10 +25,10 @@
             0 4px 24px rgba(42, 125, 225, 0.08),
             0 1.5px 6px rgba(0, 0, 0, 0.04);
         width: 300px;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: 1.1rem;
+        border: 1px solid var(--main-color);
     }
 
     .signUp h2 {

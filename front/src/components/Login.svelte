@@ -2,11 +2,11 @@
     import { login } from "../assets/dataMapper.js";
 </script>
 
-<form method="post" class="login" on:submit={(e) => {
+<form method="post" class="login" onsubmit={(e) => {
     e.preventDefault();
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
-    login(email, password);
+    isConnected = login(email, password);
 }}>
     <h2>Déjà inscrit ?</h2>
     <label for="login-email">Email</label>
@@ -25,10 +25,10 @@
             0 4px 24px rgba(42, 125, 225, 0.08),
             0 1.5px 6px rgba(0, 0, 0, 0.04);
         width: 300px;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: 1.1rem;
+        border: 1px solid var(--main-color);
     }
 
     .login h2 {

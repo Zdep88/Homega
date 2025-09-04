@@ -6,6 +6,7 @@
 <main>
   <Header />
   {#if false}
+    <h1>Welcome !</h1>
   {:else}
     <Connect />
   {/if}

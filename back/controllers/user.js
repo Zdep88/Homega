@@ -20,7 +20,7 @@ const usersController = {
         const hash = await argon2.hash(password);
         const user = await User.create({ email, hash });
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.status(201).json({ message: "Account successfully created !", email: user.email, token });
+        res.status(201).json({ message: "Account successfully created !", token });
     },
 
     async login(req, res) {
@@ -40,7 +40,7 @@ const usersController = {
             errorHandler.throwError(401, 'Invalid password');
         }
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.status(200).json({ message: "Successfully connected !", email: user.email, token });
+        res.status(200).json({ message: "Successfully connected !", token });
     },
 
     // auth(req, res, next) {

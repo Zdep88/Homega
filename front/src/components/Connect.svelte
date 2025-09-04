@@ -13,7 +13,7 @@
         margin-top: 3rem;
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
     }
 </style>
