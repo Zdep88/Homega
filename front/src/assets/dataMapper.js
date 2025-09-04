@@ -15,18 +15,16 @@ async function login(email, password) {
             toastify(response.data.error, true);
         }
         const token = response.data.token;
-        toastify(response.data.message);
         localStorage.setItem('token', token);
-        return true;
+        window.location.reload();
     } catch (error) {
         console.error(error);
         toastify(error.message, true);
-        return false;
     }
 }
 
 async function signUp(email, password) {
-    toastify('Not implemented yet', 'error');
+    
 }
 
 export { login, signUp };

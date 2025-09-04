@@ -4,8 +4,8 @@
 </script>
 
 <div class="connect">
-    <Login />
-    <SignUp />
+    <Login  />
+    <SignUp  />
 </div>
 
 <style>

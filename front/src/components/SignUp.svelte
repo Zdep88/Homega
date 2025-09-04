@@ -2,12 +2,16 @@
     import { signUp } from "../assets/dataMapper.js";
 </script>
 
-<form method="post" class="signUp" on:submit={(e) => {
-    e.preventDefault();
-    const email = document.getElementById("signUp-email").value;
-    const password = document.getElementById("signUp-password").value;
-    signUp(email, password);
-}}>
+<form
+    method="post"
+    class="signUp"
+    onsubmit={async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("signUp-email").value;
+        const password = document.getElementById("signUp-password").value;
+        await signUp(email, password);
+    }}
+>
     <h2>Nouveau compte</h2>
     <label for="signUp-email">Email</label>
     <input type="email" id="signUp-email" name="email" required />
