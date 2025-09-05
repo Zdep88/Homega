@@ -1,4 +1,4 @@
-import { sequelize, User, Request } from './relations.js';
+import { sequelize, User, Request, Verb, UserRequest } from './relations.js';
 import 'dotenv/config';
 import argon2 from 'argon2';
 
@@ -13,14 +13,26 @@ const adminUser = await User.create({
 })
 console.log("Admin user created.");
 
+const verbs = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
+for (const verbName of verbs) {
+    const verb = await Verb.create({ name: verbName });
+}
+console.log("HTTP verbs created.");
+
 const request = await Request.create({
     name: 'Get API Root',
-    method: 'GET',
     url: '/api/',
-    data: null
-})
+    data: null,
+    verbId: 1
+});
+console.log("Sample request created.");
 
-adminUser.addRequest(request.id);
+await UserRequest.create({
+    UserId: adminUser.id,
+    RequestId: request.id
+});
+console.log("Sample user-request association created.");
 
-console.log("Requests initialized.");
+
+
 process.exit(0);

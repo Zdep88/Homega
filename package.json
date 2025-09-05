@@ -6,7 +6,7 @@
   "scripts": {
     "reset": "node back/database/reset.js",
     "devFront": "cd front && vite",
-    "devBack": "node --watch index.js",
+    "devBack": "cd front && vite build && cd .. && node --watch index.js",
     "build": "npm i && cp .env.example .env && sudo nano .env && cd front && vite build"
   },
   "keywords": [],

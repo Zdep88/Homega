@@ -27,4 +27,24 @@ async function signUp(email, password) {
     
 }
 
-export { login, signUp };
+async function getCards() {
+    try {
+        const response = await axios({
+            method: 'get',
+            url: '/api/requests',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+        });
+        if (response.statusText !== 'OK') {
+            toastify(response.data.error, true);
+        }
+        return response.data.cards;
+    } catch (error) {
+        console.error(error);
+        toastify(error.message, true);
+    }
+}
+
+
+export { login, signUp, getCards };
