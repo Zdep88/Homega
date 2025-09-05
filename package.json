@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "reset": "node back/database/reset.js",
     "devFront": "cd front && vite",
     "devBack": "node --watch index.js",
-    "dev": "npm run build && npm run devBack",
-    "build": "npm i && cd front && vite build"
+    "build": "npm i && cp .env.example .env && sudo nano .env && cd front && vite build"
   },
   "keywords": [],
   "author": "",
