@@ -7,16 +7,6 @@
 <section class="cardsList">
     {#each cards as card}
         <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
-        <Card {card} />
     {/each}
 </section>
 

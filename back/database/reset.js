@@ -19,20 +19,34 @@ for (const verbName of verbs) {
 }
 console.log("HTTP verbs created.");
 
-const request = await Request.create({
-    name: 'Get API Root',
-    url: '/api/',
-    data: null,
-    verbId: 1
-});
+const requests = await Request.bulkCreate([
+    {
+        name: 'Get API Root',
+        url: '/api/',
+        data: null,
+        verbId: 1 // GET    
+    },
+    {
+        name: 'Get error Sample',
+        url: '/api/error',
+        data: null,
+        verbId: 1 // GET    
+    },
+    {
+        name: 'Get available Requests.',
+        url: '/api/requests',
+        data: null,
+        verbId: 1 // GET    
+    }
+])
 console.log("Sample request created.");
 
-await UserRequest.create({
-    UserId: adminUser.id,
-    RequestId: request.id
-});
+for (const request of requests) {
+    await UserRequest.create({
+        UserId: adminUser.id,
+        RequestId: request.id
+    });
+}
 console.log("Sample user-request association created.");
-
-
 
 process.exit(0);

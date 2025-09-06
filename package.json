@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run reset && npm run devBack",
     "reset": "node back/database/reset.js",
     "devFront": "cd front && vite",
     "devBack": "cd front && vite build && cd .. && node --watch index.js",
