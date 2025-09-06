@@ -1,10 +1,9 @@
 <script>
-    import { login } from "../assets/dataMapper.js";
-    let { name } = $props();
+    let { card } = $props();
 </script>
 
 <div class="card">
-    <div>{name}</div>
+    <div>{card.name}</div>
 </div>
 
 <style>
@@ -16,7 +15,6 @@
         color: var(--main-color);
         width: 100px;
         height: 100px;
-        margin: 1rem auto;
         text-align: center;
         font-size: 1rem;
         display: flex;

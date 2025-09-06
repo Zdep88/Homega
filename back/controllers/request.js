@@ -13,10 +13,6 @@ const requestController = {
                     model: User,
                 }]
         });
-
-        // const answer = await Request.findAll({
-        //     include: 'verb'
-        // });
         return res.status(200).json(answer);
     },
 

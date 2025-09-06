@@ -1,7 +1,7 @@
 <script>
   import Header from "./components/Header.svelte";
   import Connect from "./components/Connect.svelte";
-  import Card from "./components/Card.svelte";
+  import CardsList from "./components/CardsList.svelte";
   import { getCards } from "./assets/dataMapper.js";
 
   let isConnected = $state(false);
@@ -11,19 +11,16 @@
 
   let cards = $state([]);
   $effect(async () => {
-    const fetchedCards = await getCards();
-    console.log(fetchedCards);
-    cards = [...fetchedCards];
-    console.log(cards);
+    cards = await getCards();
   });
-  </script>
+</script>
 
 <main>
-  <Card name="test" />
-  <!-- <Header />
+  <Header />
   {#if !isConnected}
-  <Connect />
+    <Connect />
   {:else}
-  <h1>Welcome !</h1>
-  {/if} -->
+    <h1>Welcome !</h1>
+    <CardsList {cards}/>
+  {/if}
 </main>

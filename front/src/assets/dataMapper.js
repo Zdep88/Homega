@@ -39,7 +39,7 @@ async function getCards() {
         if (response.statusText !== 'OK') {
             toastify(response.data.error, true);
         }
-        return response.data.cards;
+        return response.data;
     } catch (error) {
         console.error(error);
         toastify(error.message, true);
